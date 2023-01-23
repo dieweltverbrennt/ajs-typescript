@@ -12,8 +12,7 @@ export default class Cart {
     }
 
     totalCost(): number {
-        let total: number = this._items.reduce((acc, item) => acc += item.price, 0);
-        return total;
+        return this._items.reduce((acc, item) => acc += item.price, 0);
     }
 
     totalCostWithDiscount(discount?: number): number {
@@ -25,6 +24,7 @@ export default class Cart {
     }
 
     deleteFromCart(id: number) : void {
-        this._items.filter(item => item.id !== id);
+        const deleteId = this._items.findIndex((item) => item.id === id);
+        this._items.splice(deleteId, 1);
     }
 }

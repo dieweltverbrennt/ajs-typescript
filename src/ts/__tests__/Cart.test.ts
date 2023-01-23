@@ -46,6 +46,6 @@ test('should delete item by id', () => {
   cart.add(musicAlbum1);
   cart.add(musicAlbum2);
   cart.add(musicAlbum3);
-  cart.deleteFromCart(11);
+  cart.deleteFromCart(14);
   expect(cart.items.length).toBe(2);
 });
